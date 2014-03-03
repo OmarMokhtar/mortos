@@ -1,0 +1,170 @@
+\hypertarget{group__MCAL}{\section{M\+C\+A\+L}
+\label{group__MCAL}\index{M\+C\+A\+L@{M\+C\+A\+L}}
+}
+
+
+The abstraction of the registers addresses.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__ACMCAL}{Analog Comparator}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the analog comparators. \end{DoxyCompactList}\item 
+\hyperlink{group__ADCMCAL}{A\+D\+C}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the analog to digital converter. \end{DoxyCompactList}\item 
+\hyperlink{group__DIOMCAL}{D\+I\+O}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the Digital I\+O Pins. \end{DoxyCompactList}\item 
+\hyperlink{group__EEPROMMCAL}{E\+E\+P\+R\+O\+M}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of E\+E\+P\+R\+O\+M. \end{DoxyCompactList}\item 
+\hyperlink{group__INTERRUPTMCAL}{Interrupt}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of Interrupts. \end{DoxyCompactList}\item 
+\hyperlink{group__MCUMCAL}{M\+C\+U}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the controlling registers. \end{DoxyCompactList}\item 
+\hyperlink{group__SPIMCAL}{S\+P\+I}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the serial peripheral interface. \end{DoxyCompactList}\item 
+\hyperlink{group__TIMERMCAL}{Timer}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the timers. \end{DoxyCompactList}\item 
+\hyperlink{group__TWIMCAL}{T\+W\+I}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the two wire serial interface. \end{DoxyCompactList}\item 
+\hyperlink{group__USARTMCAL}{U\+S\+A\+R\+T}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of U\+S\+A\+R\+T. \end{DoxyCompactList}\item 
+\hyperlink{group__WATCHDOGMCAL}{Watch Dog Timer}
+\begin{DoxyCompactList}\small\item\em The abstraction of the registers addresses of the watch dog timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__MCAL_ga72e45020e46f285689db51c46f273403}{R\+E\+G}(a)~((volatile \hyperlink{types_8h_a3c77e3a247345b581bdb6939ffe95a94}{uint8}$\ast$)a)
+\begin{DoxyCompactList}\small\item\em Using a register as a pointer that carries its address. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__MCAL_ga4ef436a33661955331d4f06c5b072b8a}{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H}(port, bit)~$\ast$port $\vert$= (1 $<$$<$ bit)
+\begin{DoxyCompactList}\small\item\em Setting a certain pin in the port with 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__MCAL_ga70e051310296f88da01c08c6fe5434cd}{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W}(port, bit)~$\ast$port \&= !(1 $<$$<$ bit)
+\begin{DoxyCompactList}\small\item\em Setting a certain pin in the port with 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__MCAL_ga014f8508450471f6b8e367cdb8963eb7}{G\+E\+T\+\_\+\+P\+I\+N}(port, bit)~(($\ast$port) \& (1 $<$$<$ bit))
+\begin{DoxyCompactList}\small\item\em Getting the value read at a certain pin in a certain port. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__MCAL_ga5a45bfe19b2e9ee571104bc500f2e081}{S\+E\+T\+\_\+\+R\+E\+G}(addr, value)~($\ast$addr = value)
+\begin{DoxyCompactList}\small\item\em Set the whole 8 bits register with a value. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__MCAL_ga03e68fe9bebe935ca7e2dd2c9860aa5b}{G\+E\+T\+\_\+\+R\+E\+G}(addr)~($\ast$addr)
+\begin{DoxyCompactList}\small\item\em Get the value of the whole 8 bits register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__MCAL_ga04fdc1fe49b1d3534ac782b9c9831667}{typedef volatile \hyperlink{types_8h_a3c77e3a247345b581bdb6939ffe95a94}{uint8} $\ast$ \hyperlink{group__MCAL_ga04fdc1fe49b1d3534ac782b9c9831667}{Reg\+Ptr}}\label{group__MCAL_ga04fdc1fe49b1d3534ac782b9c9831667}
+
+\begin{DoxyCompactList}\small\item\em A type that is a pointer to a register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstraction of the registers addresses. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__MCAL_ga014f8508450471f6b8e367cdb8963eb7}{\index{M\+C\+A\+L@{M\+C\+A\+L}!G\+E\+T\+\_\+\+P\+I\+N@{G\+E\+T\+\_\+\+P\+I\+N}}
+\index{G\+E\+T\+\_\+\+P\+I\+N@{G\+E\+T\+\_\+\+P\+I\+N}!M\+C\+A\+L@{M\+C\+A\+L}}
+\subsubsection[{G\+E\+T\+\_\+\+P\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+P\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{port, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~(($\ast$port) \& (1 $<$$<$ bit))}}\label{group__MCAL_ga014f8508450471f6b8e367cdb8963eb7}
+
+
+Getting the value read at a certain pin in a certain port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & The port register \\
+\hline
+\mbox{\tt in}  & {\em bit} & The pin number in the port (from 0 to 7) \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MCAL_ga03e68fe9bebe935ca7e2dd2c9860aa5b}{\index{M\+C\+A\+L@{M\+C\+A\+L}!G\+E\+T\+\_\+\+R\+E\+G@{G\+E\+T\+\_\+\+R\+E\+G}}
+\index{G\+E\+T\+\_\+\+R\+E\+G@{G\+E\+T\+\_\+\+R\+E\+G}!M\+C\+A\+L@{M\+C\+A\+L}}
+\subsubsection[{G\+E\+T\+\_\+\+R\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+R\+E\+G(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~($\ast$addr)}}\label{group__MCAL_ga03e68fe9bebe935ca7e2dd2c9860aa5b}
+
+
+Get the value of the whole 8 bits register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr} & The register \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MCAL_ga72e45020e46f285689db51c46f273403}{\index{M\+C\+A\+L@{M\+C\+A\+L}!R\+E\+G@{R\+E\+G}}
+\index{R\+E\+G@{R\+E\+G}!M\+C\+A\+L@{M\+C\+A\+L}}
+\subsubsection[{R\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+G(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((volatile {\bf uint8}$\ast$)a)}}\label{group__MCAL_ga72e45020e46f285689db51c46f273403}
+
+
+Using a register as a pointer that carries its address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The address of the register \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MCAL_ga4ef436a33661955331d4f06c5b072b8a}{\index{M\+C\+A\+L@{M\+C\+A\+L}!S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H@{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H}}
+\index{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H@{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H}!M\+C\+A\+L@{M\+C\+A\+L}}
+\subsubsection[{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+H\+I\+G\+H(
+\begin{DoxyParamCaption}
+\item[{}]{port, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~$\ast$port $\vert$= (1 $<$$<$ bit)}}\label{group__MCAL_ga4ef436a33661955331d4f06c5b072b8a}
+
+
+Setting a certain pin in the port with 1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & The port register \\
+\hline
+\mbox{\tt in}  & {\em bit} & The pin number in the port (from 0 to 7) \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MCAL_ga70e051310296f88da01c08c6fe5434cd}{\index{M\+C\+A\+L@{M\+C\+A\+L}!S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W@{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W}}
+\index{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W@{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W}!M\+C\+A\+L@{M\+C\+A\+L}}
+\subsubsection[{S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+P\+I\+N\+\_\+\+L\+O\+W(
+\begin{DoxyParamCaption}
+\item[{}]{port, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~$\ast$port \&= !(1 $<$$<$ bit)}}\label{group__MCAL_ga70e051310296f88da01c08c6fe5434cd}
+
+
+Setting a certain pin in the port with 1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port} & The port register \\
+\hline
+\mbox{\tt in}  & {\em bit} & The pin number in the port (from 0 to 7) \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__MCAL_ga5a45bfe19b2e9ee571104bc500f2e081}{\index{M\+C\+A\+L@{M\+C\+A\+L}!S\+E\+T\+\_\+\+R\+E\+G@{S\+E\+T\+\_\+\+R\+E\+G}}
+\index{S\+E\+T\+\_\+\+R\+E\+G@{S\+E\+T\+\_\+\+R\+E\+G}!M\+C\+A\+L@{M\+C\+A\+L}}
+\subsubsection[{S\+E\+T\+\_\+\+R\+E\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+R\+E\+G(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)~($\ast$addr = value)}}\label{group__MCAL_ga5a45bfe19b2e9ee571104bc500f2e081}
+
+
+Set the whole 8 bits register with a value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em addr} & The register \\
+\hline
+\mbox{\tt in}  & {\em value} & The value that the register will be set with \\
+\hline
+\end{DoxyParams}

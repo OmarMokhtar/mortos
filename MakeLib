@@ -1,0 +1,66 @@
+function make_build_dir(){
+
+        if [ ! -d ${PROJ_DIR}/built ]
+        then
+                mkdir ${PROJ_DIR}/built
+        fi
+
+        local dirname=`pwd`
+
+        local dirname="${dirname/$PROJ_DIR/}"
+        local dirname="${PROJ_DIR}/built/${dirname}/${1}"
+
+        if [ ! -d ${dirname} ]
+        then
+                mkdir ${dirname}
+        fi
+
+}
+
+MODULE_LEVEL=0
+
+function go_inside(){
+		
+	MODULE_LEVEL=${MODULE_LEVEL}+1
+ 
+	if [ ! ${1} = './' ]
+	then
+		local bullets=''
+		for (( i = 1 ; i < ${MODULE_LEVEL} ; i++));
+		do
+			local bullets="${bullets}-"
+		done
+		local bullets="${bullets} ${1}"
+		echo ${bullets}
+	fi
+       
+	cd $1
+        if [ -f MakeList ]
+        then
+                local PACKAGES=`cat MakeList`
+                local PKG_ARRAY=(${PACKAGES// })
+                for i in "${!PKG_ARRAY[@]}"
+                do
+                        if [ ! "${PKG_ARRAY[i]}" = '' ]
+                        then
+
+                                make_build_dir ${PKG_ARRAY[i]}
+                                go_inside ${PKG_ARRAY[i]}
+                        fi
+                done
+        fi
+
+	if [ -d ${TARGET} ]
+	then
+		make_build_dir ${TARGET}
+		go_inside ${TARGET}
+	fi
+
+	source "Makefile"
+	if [ ! ${1} = './' ]
+	then
+	        cd ..
+	fi
+
+	MODULE_LEVEL=${MODULE_LEVEL}-1
+}

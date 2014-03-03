@@ -1,0 +1,7 @@
+CWD=`pwd`
+
+SOURCE_FILES="${SOURCE_FILES}"
+
+C_INCLUDE_PATH="
+	${C_INCLUDE_PATH}
+	${CWD}/"

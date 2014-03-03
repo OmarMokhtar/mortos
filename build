@@ -1,0 +1,129 @@
+#!/bin/bash
+
+if [ $2 = "debug" ]
+then
+	DEBUG='--debug'
+fi
+
+echo ""
+
+echo "Building Started ..."
+
+echo ""
+
+PROJ_DIR=`pwd`
+
+TARGET=$1
+
+source "MemoryMap"
+
+source "MakeLib"
+
+echo "Prebuild preparations Started ..."
+
+echo ""
+
+go_inside ./
+
+echo ""
+
+echo "Compilation Started ..."
+
+echo ""
+
+INC_STR=""
+
+INC_ARRAY=(${C_INCLUDE_PATH// })
+for i in "${!INC_ARRAY[@]}"
+do
+	INC_STR="${INC_STR} -I${INC_ARRAY[i]}"
+done
+
+OBJ_FILES=""
+
+CHANGED_ANYTHING='no'
+
+SRC_ARRAY=(${SOURCE_FILES// })
+for i in "${!SRC_ARRAY[@]}"
+do
+
+	srcpath=${SRC_ARRAY[i]}
+
+        dstpath="${srcpath/$PROJ_DIR/}"
+        dstpath="${PROJ_DIR}/built${dstpath}"
+	dstpath="${dstpath%.*}.out"
+	
+	OBJ_FILES="${OBJ_FILES} ${dstpath}"
+
+	will_compile='no'
+
+#	if [ -f ${dstpath} ]
+#	then
+#		if [ ${srcpath} -nt ${dstpath} ]
+#		then
+			rm -f ${dstpath}
+#			will_compile='yes'
+#		else
+#			will_compile='no'
+#		fi
+#	else
+#		will_compile='yes'
+#	fi
+
+#	if [ ${will_compile}='yes' ]
+#	then
+			
+		avr-c++ -mmcu=${TARGET} -c ${INC_STR} ${srcpath} -o ${dstpath} ${DEBUG}
+
+		echo "avr-c++ -mmcu=${TARGET} -c ${INC_STR} ${srcpath} -o ${dstpath} ${DEBUG}"
+
+#		CHANGED_ANYTHING='yes'
+#	fi
+
+	if [ ! -f ${dstpath} ]
+	then
+		echo "Failed to compile ${srcpath}"
+		echo "Terminating ..."
+		exit 1
+	fi
+
+done
+
+#if [ ${CHANGED_ANYTHING} = 'no' ]
+#then
+#	echo "No changes"
+#	exit 0
+#fi
+
+echo ""
+
+echo "Linking ..."
+
+echo ""
+
+if [ -f "image.out" ]
+then
+	rm -f image.out
+fi
+
+avr-c++ -mmcu=${TARGET} ${OBJ_FILES} -Wl,--defsym=__heap_end=${HEAP_END},--defsym=__heap_start=${HEAP_START},--defsym=__bss_end=${BSS_END},--defsym=__bss_start=${BSS_START},--defsym=__data_end=${DATA_END},-Map=image.map -o image.out -lc -lgcc -lm ${DEBUG}
+
+echo "avr-c++ -mmcu=${TARGET} ${OBJ_FILES} -Wl,--defsym=__heap_end=${HEAP_END},--defsym=__heap_start=${HEAP_START},--defsym=__bss_end=${BSS_END},--defsym=__bss_start=${BSS_START},--defsym=__data_end=${DATA_END},-Map=image.map -o image.out -lc -lgcc -lm ${DEBUG}"
+
+if [ ! -f "image.out" ]
+then
+	echo "Failed at Linking"
+	exit 1
+fi
+
+echo ""
+
+echo "Generating Hex File ..."
+
+echo ""
+
+echo "avr-objcopy image.out -O ihex image.hex"
+
+avr-objcopy image.out -O ihex image.hex
+
+echo ""

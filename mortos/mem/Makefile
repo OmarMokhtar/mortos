@@ -1,0 +1,9 @@
+CWD=`pwd`
+
+SOURCE_FILES="
+	${SOURCE_FILES}
+	${CWD}/mem.cpp"
+
+C_INCLUDE_PATH="
+	${C_INCLUDE_PATH}
+	${CWD}/"

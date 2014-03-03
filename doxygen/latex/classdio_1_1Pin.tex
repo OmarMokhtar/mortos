@@ -1,0 +1,165 @@
+\hypertarget{classdio_1_1Pin}{\section{dio\+:\+:Pin Class Reference}
+\label{classdio_1_1Pin}\index{dio\+::\+Pin@{dio\+::\+Pin}}
+}
+
+
+Accessing the Digital I\+O Pins.  
+
+
+
+
+{\ttfamily \#include $<$pin.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdio_1_1Pin_af77414f31ece6e4dbe4f7fdb05d7c553}{Pin} (\hyperlink{namespacedio_aafaaf07a83434a2e2e27969628cd4606}{Pin\+Id} pin)
+\begin{DoxyCompactList}\small\item\em A Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classdio_1_1Pin_a3cab5091af5b5a93983484538b775b41}{Pin} (\hyperlink{namespacedio_aafaaf07a83434a2e2e27969628cd4606}{Pin\+Id} pin, \hyperlink{namespacedio_a24514e0c3dce0933bd4a7389f4cf20c4}{Pin\+Mode} mode)
+\begin{DoxyCompactList}\small\item\em A Constructor that sets the pin either in or out. \end{DoxyCompactList}\item 
+\hyperlink{classdio_1_1Pin_a4543b53945de7851ccab236c85e534ed}{$\sim$\+Pin} ()
+\begin{DoxyCompactList}\small\item\em The destructor. \end{DoxyCompactList}\item 
+\hyperlink{namespacedio_a24514e0c3dce0933bd4a7389f4cf20c4}{Pin\+Mode} \hyperlink{classdio_1_1Pin_aa7617a8447ef09a180d24eaded6581f6}{get\+Pin\+Mode} ()
+\begin{DoxyCompactList}\small\item\em Get the mode of the pin. \end{DoxyCompactList}\item 
+void \hyperlink{classdio_1_1Pin_a099024e32df7e226b7a83e136c8b9c76}{set\+Pin\+Mode} (\hyperlink{namespacedio_a24514e0c3dce0933bd4a7389f4cf20c4}{Pin\+Mode})
+\begin{DoxyCompactList}\small\item\em Set the mode of the pin. \end{DoxyCompactList}\item 
+void \hyperlink{classdio_1_1Pin_ac3215f236def75c219e3491a0a85d284}{set} (bool bit)
+\begin{DoxyCompactList}\small\item\em Output data to the pin. \end{DoxyCompactList}\item 
+bool \hyperlink{classdio_1_1Pin_a5608d2fc5bb5217a553497f77e5d1f90}{get} ()
+\begin{DoxyCompactList}\small\item\em Input data from the pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Accessing the Digital I\+O Pins. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdio_1_1Pin_af77414f31ece6e4dbe4f7fdb05d7c553}{\index{dio\+::\+Pin@{dio\+::\+Pin}!Pin@{Pin}}
+\index{Pin@{Pin}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{Pin}]{\setlength{\rightskip}{0pt plus 5cm}dio\+::\+Pin\+::\+Pin (
+\begin{DoxyParamCaption}
+\item[{{\bf Pin\+Id}}]{pin}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_af77414f31ece6e4dbe4f7fdb05d7c553}
+
+
+A Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & The pin id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\hypertarget{classdio_1_1Pin_a3cab5091af5b5a93983484538b775b41}{\index{dio\+::\+Pin@{dio\+::\+Pin}!Pin@{Pin}}
+\index{Pin@{Pin}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{Pin}]{\setlength{\rightskip}{0pt plus 5cm}dio\+::\+Pin\+::\+Pin (
+\begin{DoxyParamCaption}
+\item[{{\bf Pin\+Id}}]{pin, }
+\item[{{\bf Pin\+Mode}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_a3cab5091af5b5a93983484538b775b41}
+
+
+A Constructor that sets the pin either in or out. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & The pin id \\
+\hline
+\mbox{\tt in}  & {\em mode} & The pin mode (In or Out) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\hypertarget{classdio_1_1Pin_a4543b53945de7851ccab236c85e534ed}{\index{dio\+::\+Pin@{dio\+::\+Pin}!````~Pin@{$\sim$\+Pin}}
+\index{````~Pin@{$\sim$\+Pin}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{$\sim$\+Pin}]{\setlength{\rightskip}{0pt plus 5cm}dio\+::\+Pin\+::$\sim$\+Pin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_a4543b53945de7851ccab236c85e534ed}
+
+
+The destructor. 
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdio_1_1Pin_a5608d2fc5bb5217a553497f77e5d1f90}{\index{dio\+::\+Pin@{dio\+::\+Pin}!get@{get}}
+\index{get@{get}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}bool dio\+::\+Pin\+::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_a5608d2fc5bb5217a553497f77e5d1f90}
+
+
+Input data from the pin. 
+
+\begin{DoxyReturn}{Returns}
+bool The value of the pin 
+\end{DoxyReturn}
+\hypertarget{classdio_1_1Pin_aa7617a8447ef09a180d24eaded6581f6}{\index{dio\+::\+Pin@{dio\+::\+Pin}!get\+Pin\+Mode@{get\+Pin\+Mode}}
+\index{get\+Pin\+Mode@{get\+Pin\+Mode}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{get\+Pin\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pin\+Mode} dio\+::\+Pin\+::get\+Pin\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_aa7617a8447ef09a180d24eaded6581f6}
+
+
+Get the mode of the pin. 
+
+\begin{DoxyReturn}{Returns}
+Pin\+Mode The mode of the pin (in or out) 
+\end{DoxyReturn}
+\hypertarget{classdio_1_1Pin_ac3215f236def75c219e3491a0a85d284}{\index{dio\+::\+Pin@{dio\+::\+Pin}!set@{set}}
+\index{set@{set}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void dio\+::\+Pin\+::set (
+\begin{DoxyParamCaption}
+\item[{bool}]{bit}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_ac3215f236def75c219e3491a0a85d284}
+
+
+Output data to the pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em bit} & The value of the pin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\hypertarget{classdio_1_1Pin_a099024e32df7e226b7a83e136c8b9c76}{\index{dio\+::\+Pin@{dio\+::\+Pin}!set\+Pin\+Mode@{set\+Pin\+Mode}}
+\index{set\+Pin\+Mode@{set\+Pin\+Mode}!dio\+::\+Pin@{dio\+::\+Pin}}
+\subsubsection[{set\+Pin\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void dio\+::\+Pin\+::set\+Pin\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Pin\+Mode}}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classdio_1_1Pin_a099024e32df7e226b7a83e136c8b9c76}
+
+
+Set the mode of the pin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & The mode of the pin (in or out) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mortos/mcal/dio/\hyperlink{pin_8h}{pin.\+h}\item 
+mortos/mcal/dio/\hyperlink{pin_8cpp}{pin.\+cpp}\end{DoxyCompactItemize}

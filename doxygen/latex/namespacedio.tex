@@ -1,0 +1,71 @@
+\hypertarget{namespacedio}{\section{dio Namespace Reference}
+\label{namespacedio}\index{dio@{dio}}
+}
+
+
+Accessing the Digital I\+O Pins.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdio_1_1Pin}{Pin}
+\begin{DoxyCompactList}\small\item\em Accessing the Digital I\+O Pins. \end{DoxyCompactList}\item 
+struct \hyperlink{structdio_1_1PinData}{Pin\+Data}
+\begin{DoxyCompactList}\small\item\em The hardware dependant and project dependant data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacedio_a24514e0c3dce0933bd4a7389f4cf20c4}{enum \hyperlink{namespacedio_a24514e0c3dce0933bd4a7389f4cf20c4}{Pin\+Mode} \{ {\bfseries P\+I\+N\+\_\+\+I\+N}, 
+{\bfseries P\+I\+N\+\_\+\+O\+U\+T}
+ \}}\label{namespacedio_a24514e0c3dce0933bd4a7389f4cf20c4}
+
+\begin{DoxyCompactList}\small\item\em Either the pin is configured as Input or Output. \end{DoxyCompactList}\item 
+\hypertarget{namespacedio_aafaaf07a83434a2e2e27969628cd4606}{enum \hyperlink{namespacedio_aafaaf07a83434a2e2e27969628cd4606}{Pin\+Id} \{ {\bfseries P\+I\+N\+\_\+\+P\+D2}, 
+{\bfseries P\+I\+N\+\_\+\+P\+D3}, 
+{\bfseries P\+I\+N\+\_\+\+P\+B5}
+ \}}\label{namespacedio_aafaaf07a83434a2e2e27969628cd4606}
+
+\begin{DoxyCompactList}\small\item\em Project Dependant Pin Assignments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdio_1_1PinData}{Pin\+Data} \hyperlink{namespacedio_a151716277cf44ae15991502d1b6c6b63}{g\+\_\+pins\+\_\+data} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em The pin configurations hardware dependant array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Accessing the Digital I\+O Pins. 
+
+\subsection{Variable Documentation}
+\hypertarget{namespacedio_a151716277cf44ae15991502d1b6c6b63}{\index{dio@{dio}!g\+\_\+pins\+\_\+data@{g\+\_\+pins\+\_\+data}}
+\index{g\+\_\+pins\+\_\+data@{g\+\_\+pins\+\_\+data}!dio@{dio}}
+\subsubsection[{g\+\_\+pins\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pin\+Data} dio\+::g\+\_\+pins\+\_\+data}}\label{namespacedio_a151716277cf44ae15991502d1b6c6b63}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+    \{
+        \{
+            .outReg = \hyperlink{group__DIOMCAL_ga3e6a2517db4f9cb7c9037adf0aefe79b}{PORTD},
+            .inReg = \hyperlink{group__DIOMCAL_ga50997bc44119b844ceaab463c564bfb7}{PIND},
+            .dirReg = \hyperlink{group__DIOMCAL_gae24189eeb3ce4bccd97d46e88f494e0a}{DDRD},
+            .pinNumberReg = 2,
+        \},
+        \{
+            .outReg = \hyperlink{group__DIOMCAL_ga3e6a2517db4f9cb7c9037adf0aefe79b}{PORTD},
+            .inReg = \hyperlink{group__DIOMCAL_ga50997bc44119b844ceaab463c564bfb7}{PIND},
+            .dirReg = \hyperlink{group__DIOMCAL_gae24189eeb3ce4bccd97d46e88f494e0a}{DDRD},
+            .pinNumberReg = 3,
+        \},
+        \{
+            .outReg = \hyperlink{group__DIOMCAL_ga09a0c85cd3da09d9cdf63a5ac4c39f77}{PORTB},
+            .inReg = \hyperlink{group__DIOMCAL_ga49f0e8289e962c02128f24b94d7aea7c}{PINB},
+            .dirReg = \hyperlink{group__DIOMCAL_ga924a54df722121bc98383bdec5ae1898}{DDRB},
+            .pinNumberReg = 5,
+        \},
+    \}
+\end{DoxyCode}
+
+
+The pin configurations hardware dependant array. 
+
